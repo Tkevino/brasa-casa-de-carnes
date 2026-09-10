@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0908">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Cardápio digital da Brasa Casa de Carnes. Cortes bovinos, frango, suínos, linguiças e diversos.">
+  <meta name="format-detection" content="telephone=no">
+  <title>Brasa Casa de Carnes | Cardápio Digital</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient--one" aria-hidden="true"></div>
+  <div class="ambient ambient--two" aria-hidden="true"></div>
+
+  <header class="site-header" id="topo">
+    <div class="shell header-inner">
+      <a class="brand" href="#topo" aria-label="Brasa Casa de Carnes - início">
+        <span class="brand-mark" aria-hidden="true">♨</span>
+        <span>
+          <strong>BRASA</strong>
+          <small>CASA DE CARNES</small>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-button" id="shareButton" type="button" aria-label="Compartilhar cardápio">
+          <span aria-hidden="true">↗</span>
+        </button>
+        <button class="cart-button" id="openCartButton" type="button" aria-label="Abrir pedido">
+          <span>MEU PEDIDO</span>
+          <strong id="cartCount">0</strong>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow">CARDÁPIO DIGITAL • SELEÇÃO PREMIUM</span>
+        <h1 id="hero-title">CARNE DE VERDADE.<br><em>SABOR QUE MARCA.</em></h1>
+        <p>
+          Escolha seus cortes favoritos, monte seu pedido e consulte os valores de forma rápida.
+          Tudo pensado para funcionar perfeitamente no celular.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#cardapio">VER CARDÁPIO</a>
+          <button class="secondary-button" id="heroCartButton" type="button">MONTAR PEDIDO</button>
+        </div>
+        <div class="trust-row" aria-label="Diferenciais">
+          <span>✓ CORTES SELECIONADOS</span>
+          <span>✓ PREÇOS VISÍVEIS</span>
+          <span>✓ PEDIDO RÁPIDO</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-frame">
+          <img src="assets/bovinos.webp" alt="" width="1055" height="1491" fetchpriority="high">
+        </div>
+        <div class="hero-badge">
+          <strong>BRASA</strong>
+          <span>QUALIDADE À MESA</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="cardapio" aria-labelledby="catalog-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">ESCOLHA SUA CATEGORIA</span>
+            <h2 id="catalog-title">NOSSO CARDÁPIO</h2>
+          </div>
+          <p>Use a busca ou filtre por categoria. Todos os produtos são exibidos em letras maiúsculas.</p>
+        </div>
+
+        <div class="catalog-tools">
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <span class="sr-only">Buscar produto</span>
+            <input id="searchInput" type="search" placeholder="BUSCAR PICANHA, ALCATRA, FRANGO..." autocomplete="off">
+            <button id="clearSearchButton" type="button" aria-label="Limpar busca">×</button>
+          </label>
+
+          <nav class="category-tabs" id="categoryTabs" aria-label="Categorias do cardápio">
+            <button class="category-tab is-active" type="button" data-category="todos">TODOS</button>
+            <button class="category-tab" type="button" data-category="bovinos">BOVINOS</button>
+            <button class="category-tab" type="button" data-category="frango">FRANGO</button>
+            <button class="category-tab" type="button" data-category="suinos">SUÍNOS</button>
+            <button class="category-tab" type="button" data-category="linguicas">LINGUIÇAS</button>
+            <button class="category-tab" type="button" data-category="diversos">DIVERSOS</button>
+          </nav>
+        </div>
+
+        <div class="catalog-status">
+          <span id="resultCount" aria-live="polite"></span>
+          <button id="visualCatalogButton" class="text-button" type="button">VER CATÁLOGO EM IMAGENS</button>
+        </div>
+
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <span aria-hidden="true">⌕</span>
+          <h3>NENHUM PRODUTO ENCONTRADO</h3>
+          <p>Tente buscar outro nome ou selecione uma categoria diferente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-section" id="catalogo-visual" aria-labelledby="visual-title" hidden>
+      <div class="shell">
+        <div class="section-heading section-heading--visual">
+          <div>
+            <span class="eyebrow">VERSÃO PARA WHATSAPP</span>
+            <h2 id="visual-title">CATÁLOGO EM IMAGENS</h2>
+          </div>
+          <button class="secondary-button secondary-button--compact" id="closeVisualCatalogButton" type="button">FECHAR IMAGENS</button>
+        </div>
+
+        <div class="poster-grid">
+          <figure class="poster-card">
+            <img src="assets/bovinos.webp" alt="Cardápio visual de cortes bovinos" width="1055" height="1491" loading="lazy">
+            <figcaption>CORTES BOVINOS</figcaption>
+          </figure>
+          <figure class="poster-card">
+            <img src="assets/frango.webp" alt="Cardápio visual de cortes de frango" width="1055" height="1491" loading="lazy">
+            <figcaption>CORTES DE FRANGO</figcaption>
+          </figure>
+          <figure class="poster-card">
+            <img src="assets/suinos.webp" alt="Cardápio visual de cortes suínos" width="1055" height="1491" loading="lazy">
+            <figcaption>CORTES SUÍNOS</figcaption>
+          </figure>
+          <figure class="poster-card">
+            <img src="assets/linguicas.webp" alt="Cardápio visual de linguiças" width="1055" height="1491" loading="lazy">
+            <figcaption>LINGUIÇAS</figcaption>
+          </figure>
+          <figure class="poster-card">
+            <img src="assets/diversos.webp" alt="Cardápio visual de diversos" width="1055" height="1491" loading="lazy">
+            <figcaption>DIVERSOS</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice-section">
+      <div class="shell notice-card">
+        <div>
+          <span class="eyebrow">INFORMAÇÃO IMPORTANTE</span>
+          <h2>QUALIDADE E TRANSPARÊNCIA</h2>
+        </div>
+        <p>Produtos sujeitos à disponibilidade e alteração de preço. Confirme o valor final no momento do atendimento.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="brand brand--footer">
+        <span class="brand-mark" aria-hidden="true">♨</span>
+        <span>
+          <strong>BRASA</strong>
+          <small>CASA DE CARNES</small>
+        </span>
+      </div>
+      <p>TRADIÇÃO EM BOA CARNE • <a href="https://wa.me/5583988505050" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Brasa Casa de Carnes no WhatsApp">WHATSAPP: (83) 98850-5050</a></p>
+      <a href="#topo">VOLTAR AO TOPO ↑</a>
+    </div>
+  </footer>
+
+  <button class="mobile-cart-fab" id="mobileCartButton" type="button" aria-label="Abrir meu pedido">
+    <span>
+      <small>MEU PEDIDO</small>
+      <strong id="mobileCartTotal">R$ 0,00</strong>
+    </span>
+    <b id="mobileCartCount">0</b>
+  </button>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow">SELEÇÃO DO CLIENTE</span>
+        <h2 id="cartTitle">MEU PEDIDO</h2>
+      </div>
+      <button class="icon-button" id="closeCartButton" type="button" aria-label="Fechar pedido">×</button>
+    </div>
+
+    <div class="cart-content">
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-empty" id="cartEmpty">
+        <span aria-hidden="true">♨</span>
+        <h3>SEU PEDIDO ESTÁ VAZIO</h3>
+        <p>Adicione os cortes que deseja e finalize pelo WhatsApp ou copie a lista.</p>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="cart-total-row">
+        <span>VALOR ESTIMADO</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <p class="estimate-note">Para itens vendidos por peso, o valor final pode variar conforme a pesagem.</p>
+      <button class="primary-button primary-button--full" id="checkoutButton" type="button">COPIAR PEDIDO</button>
+      <button class="text-button text-button--center" id="clearCartButton" type="button">LIMPAR PEDIDO</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">Ative o JavaScript do navegador para usar a busca e montar pedidos.</div>
+  </noscript>
+</body>
+</html>
