@@ -94,9 +94,89 @@ const PRODUCTS = [
   {id:"linguica-artesanal-leao",category:"diversos",name:"LINGUIÇA ARTESANAL LEÃO",price:30.00,unit:"pacote"},
   {id:"charque-500g",category:"diversos",name:"PACOTE DE CHARQUE 500G",price:29.99,unit:"pacote"},
   {id:"pao-alho",category:"diversos",name:"PÃO DE ALHO",price:16.99,unit:null}
+  ,
+
+  // KITS SEMANAIS — KIT BRASAS
+  {id:"kit-brasas-01",category:"kits-semanais",name:"KIT BRASAS 01",price:119.99,unit:"kit",badge:"KIT SEMANAL",details:[
+    "500G CARNE MOÍDA",
+    "500G BIFE DE COXÃO MOLE",
+    "500G BIFE DE FILÉ DE FRANGO",
+    "500G CUBOS FILÉ DE FRANGO",
+    "500G STROGONOFF DE CARNE"
+  ]},
+  {id:"kit-brasas-02",category:"kits-semanais",name:"KIT BRASAS 02",price:149.99,unit:"kit",badge:"KIT SEMANAL",details:[
+    "500G CARNE MOÍDA",
+    "500G BIFE DE COXÃO MOLE",
+    "500G BIFE DE CONTRA FILÉ",
+    "500G CUBOS DE CHÃ DE FORA",
+    "500G STROGONOFF DE PATINHO"
+  ]},
+  {id:"kit-brasas-03",category:"kits-semanais",name:"KIT BRASAS 03",price:199.99,unit:"kit",badge:"KIT SEMANAL",details:[
+    "500G STROGONOFF PATINHO",
+    "500G LINGUIÇA (MISTA OU FRANGO)",
+    "500G FILÉ DE PEITO EM BIFES",
+    "500G MOÍDA DIANTEIRA",
+    "500G BISTECA SUÍNA",
+    "500G CARNE DE SOL EM CUBOS",
+    "500G COXINHA DE FRANGO",
+    "500G BIFE DE PATINHO"
+  ]},
+  {id:"kit-brasas-04",category:"kits-semanais",name:"KIT BRASAS 04",price:199.99,unit:"kit",badge:"KIT SEMANAL",details:[
+    "500G BIFE DE ALCATRA",
+    "500G PATINHO MOÍDO",
+    "500G ALCATRA EM CUBOS",
+    "500G LINGUIÇA DE FRANGO",
+    "500G ALMÔNDEGAS RECHEADAS",
+    "500G FILÉ DE PEITO EM BIFES",
+    "2 UND HAMBÚRGUER DE COSTELA",
+    "500G CARNE DE PANELA EM CUBOS"
+  ]},
+  {id:"kit-brasas-05",category:"kits-semanais",name:"KIT BRASAS 05",price:159.99,unit:"kit",badge:"KIT SEMANAL",details:[
+    "500G COXÃO MOLE",
+    "500G ALMÔNDEGAS",
+    "500G CARNE MOÍDA",
+    "500G BISTECA BOVINA",
+    "500G CUBOS DE CHÃ DE FORA",
+    "500G STROGONOFF DE PATINHO"
+  ]},
+
+  // KITS CHURRAS
+  {id:"kit-churras-01",category:"kits-churras",name:"KIT CHURRAS NA BRASA 01",price:149.99,unit:"kit",badge:"CHURRASCO",details:[
+    "500G CHORISO",
+    "500G COXINHA",
+    "500G PICANHA SUÍNA",
+    "500G TOSCANA",
+    "1KG COSTELA JANELA CHEFF BLACK",
+    "1 PÃO DE ALHO SANTA MASSA"
+  ]},
+  {id:"kit-churras-02",category:"kits-churras",name:"KIT CHURRAS NA BRASA 02",price:149.99,unit:"kit",badge:"CHURRASCO",details:[
+    "500G COSTELA DE CORDEIRO",
+    "500G CUPIM CHEFF BLACK",
+    "500G COSTELA BLACK CHEFF",
+    "500G COXINHA DE FRANGO",
+    "500G LINGUIÇA DE CHURRASCO",
+    "1 PÃO DE ALHO SANTA MASSA"
+  ]},
+  {id:"kit-churras-03",category:"kits-churras",name:"KIT CHURRAS NA BRASA 03",price:199.99,unit:"kit",badge:"CHURRASCO",details:[
+    "500G PICANHA BLACK DO CHEFF",
+    "500G COSTELA CHEFF BLACK",
+    "500G COXINHA DA ASA",
+    "500G PICANHA SUÍNA",
+    "500G LINGUIÇA DE CHURRASCO",
+    "500G CHORISO BLACK CHEFF"
+  ]},
+
+  // KIT ESPECIAL MEU BURGER
+  {id:"kit-meu-burger",category:"meu-burger",name:"KIT ESPECIAL MEU BURGER",price:9.99,unit:"unidade",badge:"MEU BURGER",details:[
+    "1 BLEND DE FRALDINHA E COSTELA",
+    "2 FATIAS DE BACON",
+    "2 FATIAS DE CHEDDAR",
+    "1 PÃO BRIOCHE"
+  ]}
+
 ];
 
-const CATEGORY_LABELS={bovinos:"CORTES BOVINOS",frango:"CORTES DE FRANGO",suinos:"CORTES SUÍNOS",linguicas:"LINGUIÇAS",diversos:"DIVERSOS"};
+const CATEGORY_LABELS={bovinos:"CORTES BOVINOS",frango:"CORTES DE FRANGO",suinos:"CORTES SUÍNOS",linguicas:"LINGUIÇAS",diversos:"DIVERSOS","kits-semanais":"KITS SEMANAIS","kits-churras":"KITS CHURRAS","meu-burger":"MEU BURGER"};
 const state={category:"todos",query:"",cart:loadCart()};
 const el={
 productGrid:document.querySelector("#productGrid"),resultCount:document.querySelector("#resultCount"),emptyState:document.querySelector("#emptyState"),
@@ -111,19 +191,20 @@ visualSection:document.querySelector("#catalogo-visual")};
 
 function normalizeText(v){return v.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().trim()}
 function money(v){return new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL"}).format(v)}
-function priceLabel(p){if(p.unit==="kg")return `${money(p.price)}/KG`;if(p.unit==="pacote")return `${money(p.price)} / PACOTE`;if(p.unit==="bandeja")return `${money(p.price)} / BANDEJA`;return money(p.price)}
-function quantityLabel(i,p){if(p.unit==="kg")return `${i.quantity.toFixed(1).replace(".",",")} KG`;return `${i.quantity} UN.`}
+function priceLabel(p){if(p.unit==="kg")return `${money(p.price)}/KG`;if(p.unit==="pacote")return `${money(p.price)} / PACOTE`;if(p.unit==="bandeja")return `${money(p.price)} / BANDEJA`;if(p.unit==="kit")return `${money(p.price)} / KIT`;if(p.unit==="unidade")return `${money(p.price)} / UN.`;return money(p.price)}
+function quantityLabel(i,p){if(p.unit==="kg")return `${i.quantity.toFixed(1).replace(".",",")} KG`;if(p.unit==="kit")return `${i.quantity} ${i.quantity===1?"KIT":"KITS"}`;return `${i.quantity} UN.`}
 function stepFor(p){return p.unit==="kg"?.1:1}
-function getFilteredProducts(){const q=normalizeText(state.query);return PRODUCTS.filter(p=>(state.category==="todos"||p.category===state.category)&&(!q||normalizeText(p.name).includes(q)||normalizeText(CATEGORY_LABELS[p.category]).includes(q)||normalizeText(p.badge||"").includes(q)))}
+function getFilteredProducts(){const q=normalizeText(state.query);return PRODUCTS.filter(p=>{const details=(p.details||[]).join(" ");return (state.category==="todos"||p.category===state.category)&&(!q||normalizeText(p.name).includes(q)||normalizeText(CATEGORY_LABELS[p.category]).includes(q)||normalizeText(p.badge||"").includes(q)||normalizeText(details).includes(q))})}
 function renderProducts(){
  const products=getFilteredProducts();el.productGrid.replaceChildren();const f=document.createDocumentFragment();
- products.forEach(p=>{const a=document.createElement("article");a.className="product-card";const meta=document.createElement("div");meta.className="product-meta";
+ products.forEach(p=>{const a=document.createElement("article");a.className="product-card";if(p.details?.length)a.classList.add("product-card--kit");const meta=document.createElement("div");meta.className="product-meta";
  const c=document.createElement("span");c.className="product-category";c.textContent=CATEGORY_LABELS[p.category];meta.appendChild(c);
  if(p.badge){const b=document.createElement("span");b.className="product-badge";b.textContent=p.badge;meta.appendChild(b)}
  const h=document.createElement("h3");h.textContent=p.name;a.append(meta,h);
  if(p.note){const n=document.createElement("p");n.className="product-note";n.textContent=p.note;a.appendChild(n)}
+ if(p.details?.length){const list=document.createElement("ul");list.className="product-details";p.details.forEach(detail=>{const item=document.createElement("li");item.textContent=detail;list.appendChild(item)});a.appendChild(list)}
  const bottom=document.createElement("div");bottom.className="product-bottom";const price=document.createElement("div");price.className="product-price";
- const cap=document.createElement("small");cap.textContent=p.unit==="kg"?"PREÇO POR KG":"PREÇO";const value=document.createElement("strong");value.textContent=priceLabel(p);price.append(cap,value);
+ const cap=document.createElement("small");cap.textContent=p.unit==="kg"?"PREÇO POR KG":p.unit==="kit"?"PREÇO DO KIT":p.unit==="unidade"?"PREÇO POR UNIDADE":"PREÇO";const value=document.createElement("strong");value.textContent=priceLabel(p);price.append(cap,value);
  const add=document.createElement("button");add.className="product-add";add.type="button";add.textContent="+";add.setAttribute("aria-label",`Adicionar ${p.name} ao pedido`);add.addEventListener("click",()=>addToCart(p.id));
  bottom.append(price,add);a.appendChild(bottom);f.appendChild(a)});
  el.productGrid.appendChild(f);el.resultCount.textContent=`${products.length} ${products.length===1?"PRODUTO ENCONTRADO":"PRODUTOS ENCONTRADOS"}`;el.emptyState.hidden=products.length!==0;

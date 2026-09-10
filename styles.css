@@ -79,3 +79,70 @@ button:disabled{opacity:.45;cursor:not-allowed}
 .cart-drawer{width:100%;border-left:0}.toast{bottom:86px}}
 @media(max-width:430px){.header-inner{gap:8px}.brand{gap:9px}.brand strong{font-size:17px}.brand small{letter-spacing:.15em}.hero-actions{grid-template-columns:1fr}.hero-visual{max-width:90%}.poster-grid{grid-template-columns:1fr}.poster-card{border-radius:16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* ===== KITS / NOVOS PRODUTOS ===== */
+.category-tab--special{
+  border-color:rgba(183,58,41,.34);
+  color:#e6c8bf;
+  background:linear-gradient(135deg,rgba(183,58,41,.12),rgba(216,169,83,.035));
+}
+.category-tab--special.is-active{
+  color:#fff;
+  background:linear-gradient(135deg,#c83b29,#8f2117);
+  box-shadow:0 8px 24px rgba(183,58,41,.2);
+}
+.product-card--kit{
+  min-height:360px;
+  border-color:rgba(183,58,41,.2);
+  background:
+    linear-gradient(150deg,rgba(183,58,41,.115),transparent 46%),
+    linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012)),
+    var(--surface);
+}
+.product-card--kit::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:3px;
+  background:linear-gradient(var(--red),var(--gold));
+  opacity:.9;
+}
+.product-card--kit h3{
+  color:#fff6ed;
+  font-size:18px;
+}
+.product-details{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:6px;
+  margin:14px 0 0;
+  padding:13px 14px 13px 30px;
+  border:1px solid rgba(255,255,255,.055);
+  border-radius:13px;
+  color:#cdbfb2;
+  background:rgba(0,0,0,.16);
+  font-size:10px;
+  font-weight:760;
+  line-height:1.35;
+}
+.product-details li::marker{
+  color:var(--red-2,#d44a33);
+}
+.product-card--kit .product-price strong{
+  font-size:24px;
+}
+.poster-card--special{
+  border-color:rgba(183,58,41,.24);
+}
+.poster-card--special figcaption{
+  color:#fff1e4;
+  background:linear-gradient(90deg,rgba(183,58,41,.15),rgba(216,169,83,.06));
+}
+
+@media(max-width:760px){
+  .product-card--kit{min-height:0}
+  .product-card--kit h3{font-size:17px}
+  .product-details{font-size:10px;gap:7px}
+}
