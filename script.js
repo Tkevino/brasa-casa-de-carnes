@@ -10,8 +10,10 @@ const CONFIG = {
 const PRODUCTS = [
   {id:"acem-osso",category:"bovinos",name:"ACÉM COM OSSO",price:32.99,unit:"kg"},
   {id:"acem-sem-osso",category:"bovinos",name:"ACÉM SEM OSSO",price:44.99,unit:"kg"},
+  {id:"baby-beef",category:"bovinos",name:"BABY BEEF",price:69.99,unit:"kg"},
   {id:"alcatra",category:"bovinos",name:"ALCATRA",price:59.99,unit:"kg"},
   {id:"alcatra-angus",category:"bovinos",name:"ALCATRA ANGUS",price:69.99,unit:"kg",badge:"ANGUS"},
+  {id:"maminha-angus",category:"bovinos",name:"MAMINHA ANGUS",price:69.99,unit:"kg",badge:"ANGUS"},
   {id:"bombom-alcatra",category:"bovinos",name:"BOMBOM DE ALCATRA",price:69.99,unit:"kg"},
   {id:"bife-especial",category:"bovinos",name:"BIFE ESPECIAL",price:54.99,unit:"kg"},
   {id:"bife-paris",category:"bovinos",name:"BIFE PARIS",price:44.99,unit:"kg"},
@@ -31,6 +33,7 @@ const PRODUCTS = [
   {id:"file-mignon",category:"bovinos",name:"FILÉ MIGNON",price:89.99,unit:"kg",badge:"PREMIUM"},
   {id:"guisado",category:"bovinos",name:"GUISADO",price:44.99,unit:"kg"},
   {id:"lombo-paulista",category:"bovinos",name:"LOMBO PAULISTA",price:49.99,unit:"kg"},
+  {id:"carpaccio",category:"bovinos",name:"CARPACCIO - LOMBO",price:89.99,unit:"kg"},
   {id:"maminha",category:"bovinos",name:"MAMINHA",price:49.99,unit:"kg"},
   {id:"medalhao-fraldinha",category:"bovinos",name:"MEDALHÃO DE FRALDINHA",price:49.99,unit:"kg"},
   {id:"medalhao-fraldinha-angus",category:"bovinos",name:"MEDALHÃO DE FRALDINHA ANGUS",price:59.99,unit:"kg",badge:"ANGUS"},
