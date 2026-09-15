@@ -82,7 +82,6 @@ const PRODUCTS = [
 
   {id:"linguica-aurora-frango",category:"linguicas",name:"LINGUIÇA AURORA DE FRANGO",price:25.99,unit:"kg"},
   {id:"linguica-bovina",category:"linguicas",name:"LINGUIÇA BOVINA",price:29.99,unit:"kg"},
-  {id:"linguica-leao",category:"linguicas",name:"LINGUIÇA LEÃO 500G",price:30.00,unit:"pacote"},
   {id:"linguica-cara-preta",category:"linguicas",name:"LINGUIÇA CARA PRETA PACOTE",price:24.99,unit:"pacote"},
   {id:"linguica-sol-queijo",category:"linguicas",name:"LINGUIÇA SOL COM QUEIJO",price:39.99,unit:"kg"},
   {id:"linguica-toscana",category:"linguicas",name:"LINGUIÇA TOSCANA",price:25.99,unit:"kg"},
