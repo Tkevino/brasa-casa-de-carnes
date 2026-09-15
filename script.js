@@ -38,7 +38,7 @@ const PRODUCTS = [
   {id:"moida-especial",category:"bovinos",name:"MOÍDA ESPECIAL",price:44.99,unit:"kg"},
   {id:"mocoto-bovino",category:"bovinos",name:"MOCOTÓ BOVINO",price:15.99,unit:"kg"},
   {id:"musculo-bovino",category:"bovinos",name:"MÚSCULO BOVINO",price:37.99,unit:"kg"},
-  {id:"patinho",category:"bovinos",name:"PATINHO",price:49.99,unit:"kg"},
+  {id:"patinho",category:"bovinos",name:"PATINHO",price:54.99,unit:"kg"},
   {id:"paleta-osso",category:"bovinos",name:"PALETA COM OSSO",price:39.99,unit:"kg"},
   {id:"paleta-sem-osso",category:"bovinos",name:"PALETA SEM OSSO",price:44.99,unit:"kg"},
   {id:"peito-bovino-osso",category:"bovinos",name:"PEITO BOVINO COM OSSO",price:28.99,unit:"kg"},
@@ -48,7 +48,7 @@ const PRODUCTS = [
   {id:"picanha-nacional",category:"bovinos",name:"PICANHA NACIONAL",price:99.99,unit:"kg",badge:"PREMIUM"},
   {id:"picanha-paraguaia",category:"bovinos",name:"PICANHA PARAGUAIA",price:99.99,unit:"kg",badge:"PREMIUM"},
   {id:"rabada-bovina",category:"bovinos",name:"RABADA BOVINA",price:29.99,unit:"kg"},
-  {id:"strogonoff-patinho",category:"bovinos",name:"STROGONOFF DE PATINHO",price:49.99,unit:"kg"},
+  {id:"strogonoff-patinho",category:"bovinos",name:"STROGONOFF DE PATINHO",price:54.99,unit:"kg"},
 
   {id:"asinha-frango",category:"frango",name:"ASINHA DE FRANGO",price:24.99,unit:"kg"},
   {id:"bisteca-frango",category:"frango",name:"BISTECA DE FRANGO",price:21.99,unit:"kg"},
