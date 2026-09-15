@@ -43,6 +43,9 @@ const PRODUCTS = [
   {id:"paleta-sem-osso",category:"bovinos",name:"PALETA SEM OSSO",price:44.99,unit:"kg"},
   {id:"peito-bovino-osso",category:"bovinos",name:"PEITO BOVINO COM OSSO",price:28.99,unit:"kg"},
   {id:"picanha-argentina",category:"bovinos",name:"PICANHA ARGENTINA",price:119.99,unit:"kg",badge:"PREMIUM"},
+  {id:"picanha-todahora",category:"bovinos",name:"PICANHA TODA HORA",price:99.99,unit:"kg",badge:"PREMIUM"},
+  {id:"picanha-maturatta",category:"bovinos",name:"PICANHA MATURATTA",price:119.99,unit:"kg",badge:"PREMIUM"},
+  {id:"picanha-uruguaia",category:"bovinos",name:"PICANHA URUGUAIA",price:119.99,unit:"kg",badge:"PREMIUM"},
   {id:"picanha-pull",category:"bovinos",name:"PICANHA PULL",price:109.99,unit:"kg",badge:"PREMIUM"},
   {id:"picanha-angus-cheff",category:"bovinos",name:"PICANHA ANGUS DO CHEFF",price:129.99,unit:"kg",badge:"ANGUS"},
   {id:"picanha-cheff",category:"bovinos",name:"PICANHA DO CHEFF",price:99.99,unit:"kg",badge:"DO CHEFF"},
@@ -79,6 +82,7 @@ const PRODUCTS = [
 
   {id:"linguica-aurora-frango",category:"linguicas",name:"LINGUIÇA AURORA DE FRANGO",price:25.99,unit:"kg"},
   {id:"linguica-bovina",category:"linguicas",name:"LINGUIÇA BOVINA",price:29.99,unit:"kg"},
+  {id:"linguica-leao",category:"linguicas",name:"LINGUIÇA LEÃO 500G",price:30.00,unit:"pacote"},
   {id:"linguica-cara-preta",category:"linguicas",name:"LINGUIÇA CARA PRETA PACOTE",price:24.99,unit:"pacote"},
   {id:"linguica-sol-queijo",category:"linguicas",name:"LINGUIÇA SOL COM QUEIJO",price:39.99,unit:"kg"},
   {id:"linguica-toscana",category:"linguicas",name:"LINGUIÇA TOSCANA",price:25.99,unit:"kg"},
