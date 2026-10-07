@@ -8,7 +8,7 @@ const CONFIG = {
 };
 
 const PRODUCTS = [
-  {id:"acem-osso",category:"bovinos",name:"ACÉM COM OSSO",price:32.99,unit:"kg"},
+  {id:"acem-osso",category:"bovinos",name:"ACÉM COM OSSO",price:34.99,unit:"kg"},
   {id:"acem-sem-osso",category:"bovinos",name:"ACÉM SEM OSSO",price:44.99,unit:"kg"},
   {id:"baby-beef",category:"bovinos",name:"BABY BEEF",price:69.99,unit:"kg"},
   {id:"alcatra",category:"bovinos",name:"ALCATRA",price:59.99,unit:"kg"},
